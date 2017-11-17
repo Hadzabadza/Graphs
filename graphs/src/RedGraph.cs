@@ -20,15 +20,32 @@ class RedGraph : Graph {
     	adjLists = new Dictionary<Node, Dictionary<Node, int>> ();
    	}
 
-	public void AddNode(Node n){}
+	public void AddNode(Node n){
+        adjLists.Add(n,new Dictionary<Node, int>());
+    }
 
-	public void AddEdge (Node start, Node end, int length){}
+	public void AddEdge (Node start, Node end, int length){
+        adjLists[start].Add(end,length);
+    }
 
-	public List<Node> Nodes(){return null;}
+	public List<Node> Nodes(){
+		List<Node> temp = new List<Node>();
+		foreach (Node nood in adjLists.Keys) {
+			temp.Add (nood);
+		}
+        return temp;
+    }
 
-	public List<Node> Neighbours(Node n){return null;}
+	public List<Node> Neighbours(Node n){
+		List<Node> temp = new List<Node>();
+		foreach (Node nood in adjLists[n].Keys) { temp.Add (nood); }
+		return temp;
+	}
 
-	public int Cost(Node start, Node end){return 0;}
+	public int Cost(Node start, Node end){
+		if (adjLists [start] [end] != null) { return adjLists [start] [end]; }
+		else { return 0 };
+	}
 
 
    // ADD MISSING METHODS HERE

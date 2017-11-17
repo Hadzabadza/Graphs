@@ -34,7 +34,7 @@ class Pathfind {
          } else {
 
             // First argument selects the graph
-            Graph graph = new Graph(); 
+			RedGraph graph = new RedGraph(); 
             Examples.Build(graph, g);
             graph.Write();
 

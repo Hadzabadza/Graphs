@@ -6,7 +6,7 @@ using System.Collections.Generic;
  */
 public class AStar : Pathfinder {
 
-   private Graph                    graph;
+   private RedGraph                    graph;
    private PriorityQueue            frontier;
    private Dictionary<Node, Node>   previous;
    private Dictionary<Node, int>    cost;
