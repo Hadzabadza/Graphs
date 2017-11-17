@@ -12,7 +12,7 @@ public class AStar : Pathfinder {
    private Dictionary<Node, int>    cost;
    
    public void SetGraph(Graph g) {
-      graph = g;
+      graph = (RedGraph)g;
    }
 
    public List<Node> FindPath(Node start, Node goal) {

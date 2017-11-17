@@ -43,8 +43,7 @@ class RedGraph : Graph {
 	}
 
 	public int Cost(Node start, Node end){
-		if (adjLists [start] [end] != null) { return adjLists [start] [end]; }
-		else { return 0 };
+		return adjLists [start] [end];
 	}
 
 
