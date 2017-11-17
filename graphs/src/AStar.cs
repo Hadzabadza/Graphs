@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 
 /*
- * An A* Pathfinder
+ * A Dijkstra Pathfinder
  */
-public class AStar : Pathfinder {
+public class Dijkstra : Pathfinder {
 
    private RedGraph                    graph;
    private PriorityQueue            frontier;
@@ -73,8 +73,8 @@ public class AStar : Pathfinder {
 
             // New node OR cheaper path to known node
             if (!visitedBefore ||  nextCost < cost[next]) {
-               // Add it to the frontier
-               frontier.Enqueue(next, nextCost + Distance(next, goal));
+                    // Add it to the frontier
+                    frontier.Enqueue(next, nextCost);// + Distance(next, goal));
                // Record how we got to next and it's cost
                previous[next] = current;
                cost[next] = nextCost;
